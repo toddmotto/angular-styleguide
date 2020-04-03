@@ -331,10 +331,10 @@ An example of a stateful component, complete with its low-level module definitio
 
 ```js
 /* ----- todo/todo.component.js ----- */
-import templateUrl from './todo.html';
+import template from './todo.html';
 
 export const TodoComponent = {
-  templateUrl,
+  template: template,
   controller: class TodoComponent {
     constructor(TodoService) {
       'ngInject';
@@ -399,14 +399,14 @@ An example of a stateless component (let's use `<todo-form>` as an example), com
 
 ```js
 /* ----- todo/todo-form/todo-form.component.js ----- */
-import templateUrl from './todo-form.html';
+import template from './todo-form.html';
 
 export const TodoFormComponent = {
   bindings: {
     todo: '<',
     onAddTodo: '&'
   },
-  templateUrl,
+  template: template,
   controller: class TodoFormComponent {
     constructor(EventEmitter) {
         'ngInject';
@@ -470,13 +470,13 @@ For this example, we're going to take the existing `<todo>` component, refactor 
 
 ```js
 /* ----- todo/todo.component.js ----- */
-import templateUrl from './todo.html';
+import template from './todo.html';
 
 export const TodoComponent = {
   bindings: {
     todoData: '<'
   },
-  templateUrl,
+  template: template,
   controller: class TodoComponent {
     constructor() {
       'ngInject'; // Not actually needed but best practice to keep here incase dependencies needed in the future
